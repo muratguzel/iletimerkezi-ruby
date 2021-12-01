@@ -24,6 +24,7 @@ module IletimerkeziSMS
           }
           xlm.order {
             xlm.sender argv[:sender]
+            xlm.iys argv[:iys]
             xlm.sendDateTime Time.now.strftime("%d/%m/%Y %H:%M")
             xlm.message {
               xlm.text_ argv[:message]
@@ -60,6 +61,7 @@ module IletimerkeziSMS
           xlm.order {
             xlm.sender argv[:sender]
             xlm.sendDateTime Time.now.strftime("%d/%m/%Y %H:%M")
+            xlm.iys argv[:iys]
             argv[:messages].each do |message|
               xlm.message {
                 xlm.text_ message[:text]
